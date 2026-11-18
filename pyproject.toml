@@ -1,0 +1,25 @@
+
+[project]
+name = "new-project"
+version = "0.1.0"
+description = "An API for Noor Foods products, orders and stock"
+readme = "README.md"
+authors = [
+    { name = "Shujaat Karim", email = "codewithshujaat@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]",
+    "sqlmodel",
+    "psycopg[binary]"
+]
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "noor_foods_api"
+
+[tool.fastapi]
+entrypoint = "noor_foods_api.main:app"
