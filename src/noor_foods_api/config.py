@@ -8,10 +8,17 @@ DEFAULT_DATABASE_URL = (
 
 
 class Settings(BaseSettings):
+    """App settings, read from environment variables or a .env file.
+
+    database_url is filled from DATABASE_URL when it is set. The default
+    works on a laptop running the noor-foods-db container on port 5433.
+    """
+
     database_url: str = DEFAULT_DATABASE_URL
 
     model_config = SettingsConfigDict(
-        env_file=".env", env_file_encoding="utf-8"
+        env_file=".env",
+        env_file_encoding="utf-8",
     )
 
 

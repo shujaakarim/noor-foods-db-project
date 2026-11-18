@@ -7,5 +7,5 @@ app = FastAPI(
 
 
 @app.get("/")
-def read_root() -> dict[str, str]:
+def root() -> dict[str, str]:
     return {"app": "Noor Foods API", "docs": "/docs"}
